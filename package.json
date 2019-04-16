@@ -1,0 +1,27 @@
+{
+  "name": "farmnet",
+  "version": "1.0.0",
+  "description": "Discussion and notifications portal for farmers and experts.",
+  "main": "init.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "ejs": "^2.6.1",
+    "mongoose": "^5.5.0",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neha-v-mahajan/FarmNet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neha-v-mahajan/FarmNet/issues"
+  },
+  "homepage": "https://github.com/neha-v-mahajan/FarmNet#readme"
+}
