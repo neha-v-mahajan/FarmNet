@@ -22,3 +22,4 @@ app.get('/',(req,res)=>{
 }).get('/newInnovation',(req,res)=>{
     res.render('newInnovation');
 });
+app.listen(process.env.PORT || 5000)
