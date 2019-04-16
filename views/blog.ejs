@@ -40,7 +40,7 @@
 			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 		
 		<!-- Navigation -->
-		<nav class="navbar navbar-inverse">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -55,14 +55,12 @@
 					<ul class="nav navbar-nav navbar-right custom-menu">
 						<li class="active"><a href="/">Home</a></li>
 						<li><a href="/#about">About</a></li>
-						<li><a href="/blog">Discussion</a></li>
-						<li><a href="/single-post">self Post</a></li>
-						<!--<li><a href="#portfolio1">Portofolio</a></li>-->
-						
 						<li><a href="/#portfolio1">Blog</a></li>
-						<!-- <li><a href="/single-post">Single</a></li> -->
+						<li><a href="/farmerregistration">Register Farmer</a></li>
+						<li><a href="/#contact">Contact Us</a></li>
+						<li><a href="/blog">Discussion</a></li>
 						<li><a href="/newInnovation">New_Innovations</a></li>
-						<li><a href="/#contact">Contact</a></li>
+						<li><a href="/logout">Log out</a></li>
 
 					</ul>
 				</div>
@@ -74,138 +72,36 @@
 			<div class="row">
 		        <!-- Blog Column -->
 		        <div class="col-md-8">
+					<b><h3>Hello <%= farmer.fname %> !</h3></b>
 		            <h1 class="page-header sidebar-title">
-		                Discussions
+		                Posts
 		            </h1>
-		            <!-- First Blog Post -->
+					<!-- First Blog Post -->
+					<%for (var r in post){%>
 		            <div class="row blogu">
 		                <div class="col-sm-4 col-md-4 ">
 		                    <div class="blog-thumb">
-		                        <a href="./single-post">
-		                            <img class="img-responsive" src="images/blog-photo1.jpg" alt="photo">
+		                        <a href="/expert/detail">
+		                            <img class="img-responsive" src="./uploads/<%= post[r].image %>" alt="photo">
 		                        </a>
 		                    </div>
 		                </div>
 		                <div class="col-sm-8 col-md-8">
 		                    <h2 class="blog-title">
-		                        <a href="/single-post">Post title 1</a>
+		                        <a href="/expert/detail/<%= post[r].title %>"><%= post[r].title %></a>
 		                    </h2>
-		                    <p><i class="fa fa-calendar-o"></i>  August 28, 2013 
-		                        <span class="comments-padding"></span>
-		                        <i class="fa fa-comment"></i> 0 comments
-		                    </p>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
+		                    <p><i class="fa fa-calendar-o"></i> <%= post[r].date %> 
+		                        <span class="comments-padding"></span><br>
+								<i class="fa fa-comment"></i> 0 comments<br>
+								<button class ="button btn-default" onclick="myFunction()" style="border-radius: 50%;"><i class="fa fa-star-o"></i></button>
+							<p><b>type	:</b><%= post[r].type %></p>
+
 		                </div>
 		            </div>
-		            <hr>
+					<hr>
+					<%}%>
 		            <!-- Second Blog Post -->
-		            <div class="row">
-		                <div class="col-sm-4 col-md-4">
-		                    <div class="blog-thumb">
-		                        <a href="/single-post">
-		                            <img class="img-responsive" src="images/blog-photo2.jpg" alt="photo">
-		                        </a>
-		                    </div>
-		                </div>
-		                <div class="col-sm-8 col-md-8">
-		                    <h2 class="blog-title">
-		                        <a href="/single-post">Post title 2</a>
-		                    </h2>
-		                    <p><i class="fa fa-calendar-o"></i> August 28, 2013 
-		                       <span class="comments-padding"></span>
-		                       <i class="fa fa-comment"></i> 3 comments
-		                    </p>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-		                </div>
-		            </div>
-		            <hr>
-		            <!-- Third Blog Post -->
-		            <div class="row">
-		                <div class="col-sm-4 col-md-4">
-		                    <div class="blog-thumb">
-		                        <a href="single-post.html">
-		                        <img class="img-responsive" src="images/blog-photo3.jpg" alt="photo">
-		                        </a>
-		                    </div>
-		                </div>
-		                <div class="col-sm-8 col-md-8">
-		                    <h2 class="blog-title">
-		                        <a href="single-post.html">Post title 3</a>
-		                    </h2>
-		                    <p><i class="fa fa-calendar-o"></i>  August 28, 2013 
-		                        <span class="comments-padding"></span>
-		                        <i class="fa fa-comment"></i> 1 comment
-		                    </p>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-		                </div>
-		            </div>
-		            <hr>
-		            <!-- Fourth Blog Post -->
-		            <div class="row">
-		                <div class="col-sm-4 col-md-4">
-		                    <div class="blog-thumb">
-		                        <a href="single-post.html">
-		                            <img class="img-responsive" src="images/blog-photo1.jpg" alt="photo">
-		                        </a>
-		                    </div>
-		                </div>
-		                <div class="col-sm-8 col-md-8">
-		                    <h2 class="blog-title">
-		                        <a href="single-post.html">Post title 4</a>
-		                    </h2>
-		                    <p><i class="fa fa-calendar-o"></i> August 28, 2013 
-		                       <span class="comments-padding"></span>
-		                       <i class="fa fa-comment"></i> 3 comments
-		                    </p>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-		                </div>
-		            </div>
-
-		             <hr>
-		            <!-- Fifth Blog Post -->
-		            <div class="row">
-		                <div class="col-sm-4 col-md-4">
-		                    <div class="blog-thumb">
-		                        <a href="single-post.html">
-		                            <img class="img-responsive" src="images/blog-photo2.jpg" alt="photo">
-		                        </a>
-		                    </div>
-		                </div>
-		                <div class="col-sm-8 col-md-8">
-		                    <h2 class="blog-title">
-		                        <a href="single-post.html">Post title 5</a>
-		                    </h2>
-		                    <p><i class="fa fa-calendar-o"></i> August 28, 2013 
-		                       <span class="comments-padding"></span>
-		                       <i class="fa fa-comment"></i> 3 comments
-		                    </p>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-		                </div>
-		            </div>
-
-		             <hr>
-		            <!-- Six Blog Post -->
-		            <div class="row">
-		                <div class="col-sm-4 col-md-4">
-		                    <div class="blog-thumb">
-		                        <a href="single-post.html">
-		                            <img class="img-responsive" src="images/blog-photo3.jpg" alt="photo">
-		                        </a>
-		                    </div>
-		                </div>
-		                <div class="col-sm-8 col-md-8">
-		                    <h2 class="blog-title">
-		                        <a href="single-post.html">Post title 6</a>
-		                    </h2>
-		                    <p><i class="fa fa-calendar-o"></i> August 28, 2013 
-		                       <span class="comments-padding"></span>
-		                       <i class="fa fa-comment"></i> 3 comments
-		                    </p>
-		                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis ipsum officiis rerum.</p>
-		                </div>
-		            </div>
-		            
-
+		
 
 		            <hr>
 		            <div class="text-center"> 
@@ -234,8 +130,8 @@
 		                    <h4 class="sidebar-title"><i class="fa fa-list-ul"></i> Categories</h4>
 		                    <hr>
 		                    <ul class="sidebar-list">
-		                        <li><a href="#">Innovations</a></li>
-		                        <li><a href="#">My posts</a></li>
+		                        <li><a href="\innovationblog">Innovations</a></li>
+		                        <li><a href="\myblog">My posts</a></li>
 		                        <li><a href="#">Expert Advices</a></li>
 		                        
 		                    </ul>
@@ -303,101 +199,6 @@
 		    </section>
 
         
-		<section id="contact">
-			<div class="container"> 
-				<div class="row">
-					<div class="col-md-12">
-						<div class="col-lg-12">
-							<div class="text-center color-elements">
-							<h2>Contact Us</h2>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-8">
-							<form class="inline" id="contactForm" method="post" >
-								<div class="row">
-									<div class="col-sm-6 height-contact-element">
-										<div class="form-group">
-											<input type="text" name="first_name" class="form-control custom-labels" id="name" placeholder="FULL NAME" required data-validation-required-message="Please write your name!"/>
-											<p class="help-block text-danger"></p>
-										</div>
-									</div>
-									<div class="col-sm-6 height-contact-element">
-										<div class="form-group">
-											<input type="email" name="email" class="form-control custom-labels" id="email" placeholder="EMAIL" required data-validation-required-message="Please write your email!"/>
-											<p class="help-block text-danger"></p>
-										</div>
-									</div>
-									<div class="col-sm-12 height-contact-element">
-										<div class="form-group">
-											<input type="text" name="message" class="form-control custom-labels" id="message" placeholder="WHAT'S ON YOUR MIND" required data-validation-required-message="Please write a message!"/>
-										</div>
-									</div>
-									<div class="col-sm-3 col-xs-6 height-contact-element">
-										<div class="form-group">
-											<input type="submit" class="btn btn-md btn-custom btn-noborder-radius" value="Send It"/>
-										</div>
-									</div>
-									<div class="col-sm-3 col-xs-6 height-contact-element">
-										<div class="form-group">
-											<button type="button" class="btn btn-md btn-noborder-radius btn-custom" name="reset">RESET
-											</button>
-										</div>
-									</div>
-									<div class="col-sm-3 col-xs-6 height-contact-element">
-										<div class="form-group">
-											<div id="response_holder"></div>
-										</div>
-									</div>
-									<div class="col-sm-12 contact-msg">
-									<div id="success"></div>
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="col-lg-5 col-md-3 col-lg-offset-1 col-md-offset-1">
-							<div class="row">
-								<div class="col-md-12 height-contact-element">
-									<div class="form-group">
-										<i class="fa fa-2x fa-map-marker"></i>
-										<span class="text">LOCATION</span>
-									</div>
-								</div>
-								<div class="col-md-12 height-contact-element">
-									<div class="form-group">
-										<i class="fa fa-2x fa-phone"></i>
-										<span class="text">0051 768622115</span>
-									 </div>
-								 </div>
-								<div class="col-md-12 height-contact-element">    
-									<div class="form-group">
-										<i class="fa fa-2x fa-envelope"></i>
-										<span class="text">info@company.com</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="follow-us">
-			<div class="container"> 
-				<div class="text-center height-contact-element">
-					<h2>FOLLOW US</h2>
-				</div>
-				<img class="img-responsive displayed" src="images/short.png" alt="short" />
-				<div class="text-center height-contact-element">
-					<ul class="list-unstyled list-inline list-social-icons">
-						<li class="active"><a href="#"><i class="fa fa-facebook social-icons"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter social-icons"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus social-icons"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin social-icons"></i></a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-
 		<footer id="footer">
 			<div class="container">
 				<div class="row myfooter">

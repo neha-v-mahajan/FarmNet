@@ -18,30 +18,16 @@ var FarmerSchema = mongoose.Schema({
     	type: String,
     	// required: true
     },
-    nationality:
-    {
-        type:String,
-        // required:true
-    },
     mobno:
     {
         type:Number,
         // required:true
     },
-    occupation:
-    {
-        type:String,
-        // required:true
-    },
-    email:{
-        type: String,
-        // required: true
-    },
     dob:{
     	type: Date,
     	// required: true
     },
-    Aadhar:
+    aadhar:
     {
         type:String
     },
@@ -49,22 +35,19 @@ var FarmerSchema = mongoose.Schema({
     	type: String,
     	// required: true
     },
-    id:{type:String},
     password:{type:String},
-    
-    state:{type:String},
     pincode:{type:Number},
     surveyno:{
-        type:Number,required:true
+        type:Number
     },
     cropname:{
-        type:String,required:true
+        type:String
     },
     cropyield:
     {
-        type:Number,required:true
+        type:Number
     },
-    season:{type:String,required:true},
+    season:{type:String},
     income:{type:String},
     area:{type:String},
     district:{type:String}

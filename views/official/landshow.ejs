@@ -63,15 +63,13 @@
 			
 					<center><table class="table" cellpadding="10" border="1" >
 						<tr>
-							<!-- <th>Name</th>
+							<th>Name</th>
 							<th>Gender</th>
-							<th>Nationality</th>
 							<th>Mobile</th>
-							<th>Occupation</th>
-							<th>Email</th>
 							<th>Date Of Birth</th>
 							<th>Aadhar</th>
-							<th>Address</th> -->
+							<th>Address</th>
+							<th>Pin code</th>
 						<th>Survey No</th>
 						<th>Crop</th>
 						<th>Annual Yield</th>
@@ -85,15 +83,13 @@
 						<!-- <li><%= farmers[result].surveyno %></li>    
 						 -->
 					<tr>
-						<!-- <td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td> -->
+						<td><%= farmers[result].fname %><%= farmers[result].mname %><%= farmers[result].lname %></td>
+						<td><%= farmers[result].gender %></td>
+						<td><%= farmers[result].mobno %></td>
+						<td><%= farmers[result].dob %></td>
+						<td><%= farmers[result].aadhar %></td>
+						<td><%= farmers[result].area %></td>
+						<td><%= farmers[result].pincode %></td>
 						<td><%= farmers[result].surveyno %> </td>
 						<td><%= farmers[result].cropname %> </td>
 						<td><%= farmers[result].cropyield %> </td>

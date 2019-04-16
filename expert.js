@@ -71,8 +71,6 @@ if(req.session.user){
 			res.render('./expert/single-post',{post:data,expert:user});
 		}
 	})
-
-	//res.render('./expert/blog',{post:{username:user.name}});
 }
 else{
 	var resp =`
@@ -101,8 +99,6 @@ app.post('/clogin',(req,res)=>{
 });
 
 app.get('/logout',(req,res)=>{
-    // res.clearCookie('userdata');
-    
     if(req.session.user){
         req.session.destroy((err,data)=>{
             if(err) console.log(err);
@@ -112,9 +108,8 @@ app.get('/logout',(req,res)=>{
                 `;
                 res.send(succ);
             }
-        
-    });
-}
+    	});
+	}
     else{
         var resp =`
         <script> alert('log in first');window.location.href='/expert/login';</script>
@@ -137,6 +132,7 @@ app.get('/login',(req,res)=>{
         `;
         res.send(resp);   
 	}
+
 }).get('/single-post',(req,res)=>{
 	if(req.session.user){
         var user = req.session.user;  
@@ -183,14 +179,7 @@ app.get('/login',(req,res)=>{
         
 			res.render('./expert/index',{post:data});
 		  })
-
-		// post.findOne({},(err,data)=>{
-		// 	if(data){
-		// 		res.render('./expert/index',{post:data});
-		// 	}
-		// })  
-        //res.render('./expert/addInnovation',{post:{username:user.name}});
-    }
+	}
     else{
         var resp =`
         <script> alert('log in first');window.location.href='/expert/login';</script>
