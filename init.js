@@ -22,5 +22,3 @@ app.get('/',(req,res)=>{
 }).get('/newInnovation',(req,res)=>{
     res.render('newInnovation');
 });
-
-app.listen(8080);
