@@ -180,7 +180,6 @@ app.get('/logout',(req,res)=>{
 app.get('/login',(req,res)=>{
 	res.render('login');
 })	
-app.listen(8080);
-=======
+
 app.listen(process.env.PORT || 5000)
->>>>>>> f7674512a9bd521ec8789d9cb44577dfde8beb30
+
